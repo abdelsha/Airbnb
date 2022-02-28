@@ -24,9 +24,10 @@ export default function Home({exploreData, cardsData}) {
 
           {/* Pull from the server */}
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-          {exploreData?.map((items)=>(
-            <SmallCard key={items.img}
-            img={items.img} distance={items.distance} location={items.location}></SmallCard>
+          {exploreData?.map((items,key)=>(
+            <SmallCard 
+            key={items.img}
+              img={items.img} distance={items.distance} location={items.location}></SmallCard>
             
           ))}
           </div>
@@ -35,7 +36,7 @@ export default function Home({exploreData, cardsData}) {
         <section>
           <h2 className='text-4xl font-semibold py-8 '>Live anywhere</h2>
           <div className='flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3'>
-            {cardsData?.map((items)=>(
+            {cardsData?.map((items,key)=>(
               <MediumCard key={items.img}  img={items.img} title={items.title} />
             ))}
           </div>
