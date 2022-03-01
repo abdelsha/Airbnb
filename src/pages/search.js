@@ -6,6 +6,8 @@ import { useRouter } from 'next/router'
 import { format } from 'date-fns'
 import InfoCard from '../components/InfoCard'
 
+import Mapped from '../components/Map'
+
 function Search({searchResults}) {
     const router = useRouter();
 
@@ -44,13 +46,16 @@ function Search({searchResults}) {
 
               
           </section>
+          <section className='hidden xl:inline-flex min-w-[600px] cursor-pointer'>
+              <Mapped searchResults={searchResults}/>
+          </section>
 
       </main>
 
 
 
       <Footer/>
-
+            
         
     </div>
   )
