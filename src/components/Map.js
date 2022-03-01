@@ -36,13 +36,13 @@ function Mapped({searchResults}) {
                 longitude={results.long} latitude={results.lat} offsetLeft={-20} offsetTop={-10}>
                  <p 
                  role="img"
-                 
+                 onClick={()=>setSelectedLocation(results)}
                  area-aria-label='push-pin'
                  className='cursor-pointer text-2xl animate-bounce'>📌</p>
 
              </Marker>
              
-             {/* {selectedLocation.long === results.long ? (
+             {selectedLocation.long === results.long ? (
                  <Popup
                     onClose={()=>setSelectedLocation({})}
                      
@@ -55,7 +55,7 @@ function Mapped({searchResults}) {
                  </Popup>
              ):(
                   false
-             )} */}
+             )}
          </div>
      ))}   
     </Map>
